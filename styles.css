@@ -49,6 +49,7 @@ body {
     justify-content: center;
     position: relative;
     perspective: 1000px;
+    border: none !important;
     transition: all 0.2s ease-in-out;
 }
 
@@ -579,8 +580,8 @@ body {
     top: 30px;
     left: 27px;
     border-radius: 10px;
-    background-color:#51B05F;
     display: flex;
+    background-color:#51B05F;
     justify-content: center;
     align-items: center;
     border: solid 1px black;
@@ -645,8 +646,51 @@ body {
     left: 100px;
     background-color:#51B05F;
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: solid 2px black;
     border-radius: 10px;
+}
+
+.pokedex-container .pokemon-left-side-container .bottom-side .rectangle span {
+    font-weight: bold;
+}
+
+.pokedex .pokemon-right-side-container .github-profile-button-container {
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(180deg);
+    top: 63px;
+    left: 80px;
+}
+
+.pokedex .pokemon-right-side-container .github-profile-button-container a {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 50%;
+    box-shadow: -3px 3px rgba(0, 0, 0, 0.60);
+    transition: all 0.2s ease;
+}
+
+.pokedex .pokemon-right-side-container .github-profile-button-container a:active {
+    box-shadow: 0px 0px rgba(0, 0, 0, 0.60);
+    opacity: 0.8;
+    transition: all 0.2s ease;
+    
+}
+
+.pokedex .pokemon-right-side-container .github-profile-button-container a img {
+    width: 100%;
+    height: 100%;
 }
 
 .pokedex-container .pokemon-left-side-container .bottom-side .d-pad_container {

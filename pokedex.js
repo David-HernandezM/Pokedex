@@ -4,11 +4,14 @@ var musicOn = true;
 
 soundButton.onclick = () => {
     const music = document.getElementById("pokemon-music");
+    const music_text = document.getElementById("text-music");
     if (!musicOn) {
         music.play();
+        music_text.innerHTML = "ON";
     } else {
         music.pause();
         music.currentTime = 0;
+        music_text.innerHTML = "OFF";
     }
     musicOn = !musicOn;
 }
@@ -95,8 +98,5 @@ const putStatistic = (statistic, amount, color) => {
             boxShadowStyle += shadow;
         }
     }
-    console.log(boxShadowStyle)
     statistic.style.boxShadow = boxShadowStyle;
 }
-
-// rgb(231, 231, 231)
