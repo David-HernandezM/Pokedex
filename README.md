@@ -1,0 +1,2 @@
+# Pokedex
+Práctica Pokédex - launchX
