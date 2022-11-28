@@ -80,6 +80,7 @@ const putPokeImage = (pokeImage) => {
     pokemonImage.src = pokeImage;
 }
 
+/*
 const putStatistic = (statistic, amount, color) => {
     let boxShadowStyle = "";
     let i = 4;
@@ -97,6 +98,31 @@ const putStatistic = (statistic, amount, color) => {
         } else {
             boxShadowStyle += shadow;
         }
+    }
+    statistic.style.boxShadow = boxShadowStyle;
+}
+*/
+
+const putStatistic = (statistic, amount, color) => {
+    let boxShadowStyle = "";
+    let i = 40;
+    amount = 40 - (((amount + (10 - amount%10))/10)*4 - 8);
+    for (i = 40; i > amount; i -= 4) {
+        let shadow  = `0 ${i}px ${color}`;
+        boxShadowStyle += shadow + ", ";
+    }
+    for (i = i; i > 4; i -= 4) {
+        let shadow  = `0 ${i}px white`;
+        if (i > 0) {
+            boxShadowStyle += shadow + ", ";
+        } else {
+            boxShadowStyle += shadow;
+        }
+    }
+    if (amount == 4) {
+        statistic.style.backgroundColor = color;
+    } else {
+        statistic.style.backgroundColor = "white";
     }
     statistic.style.boxShadow = boxShadowStyle;
 }
