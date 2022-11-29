@@ -80,49 +80,34 @@ const putPokeImage = (pokeImage) => {
     pokemonImage.src = pokeImage;
 }
 
-/*
 const putStatistic = (statistic, amount, color) => {
     let boxShadowStyle = "";
-    let i = 4;
-    amount = ((amount + (10 - amount%10))/10)*4 - 8;
-    console.log("cantidad: ", amount);
-    statistic.style.backgroundColor = color;
-    for (i = 4; i <= amount; i += 4) {
+    let i = 36;
+    amount = amount > 100 ? 100 : amount;
+    // console.log("Initial amount: ", (((amount + (10 - amount%10))/10)*4 - 4));
+    amount = 40 - (((amount + (10 - amount%10))/10)*4 - 4);
+    // console.log("Actual amount: ", amount);
+    for (i = 36; i >= amount && i > 0; i -= 4) {
         let shadow  = `0 ${i}px ${color}`;
-        boxShadowStyle += shadow + ", ";
-    }
-    for (i = i; i < 40; i += 4) {
-        let shadow  = `0 ${i}px white`;
-        if (i < 36) {
+        if (i > 4) {
             boxShadowStyle += shadow + ", ";
         } else {
             boxShadowStyle += shadow;
         }
     }
-    statistic.style.boxShadow = boxShadowStyle;
-}
-*/
-
-const putStatistic = (statistic, amount, color) => {
-    let boxShadowStyle = "";
-    let i = 40;
-    amount = 40 - (((amount + (10 - amount%10))/10)*4 - 8);
-    for (i = 40; i > amount; i -= 4) {
-        let shadow  = `0 ${i}px ${color}`;
-        boxShadowStyle += shadow + ", ";
-    }
-    for (i = i; i > 4; i -= 4) {
+    for (i = i; i > 0; i -= 4) {
         let shadow  = `0 ${i}px white`;
-        if (i > 0) {
+        if (i > 4) {
             boxShadowStyle += shadow + ", ";
         } else {
             boxShadowStyle += shadow;
         }
     }
-    if (amount == 4) {
+    if (amount == 0) {
         statistic.style.backgroundColor = color;
     } else {
         statistic.style.backgroundColor = "white";
     }
+    // console.log(boxShadowStyle);
     statistic.style.boxShadow = boxShadowStyle;
 }
